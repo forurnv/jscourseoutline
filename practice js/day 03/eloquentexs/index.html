@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>	
+
+	<style>
+		.switch {
+			background: green;
+			height: 100px;
+			width: 100px;
+		}
+
+		.success {
+			background: red;
+			transform: translateX(100px);
+		}
+		.selfdestruct {
+			background: green;
+			transition: 1.2s;
+
+		}
+		#switchhousing {
+			height: 100px;
+			width: 200px;
+			background: black;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div id=switchhousing>
+	<div id="switch" class="switch"></div>
+	</div>
+	<button id="launch-missiles">LAUNCH NOW</button>
+	<button id="selfdestruct">SELFDESTRUCT</button>
+</body>
+
+<script>
+
+	const launchButton = document.querySelector("#launch-missiles")
+	const switchToggle = document.querySelector("#switch")
+
+	launchButton.addEventListener("click", function() {
+		console.log("LAUNCHED!")
+		switchToggle.className = "switch success"
+	})
+
+
+	const launchButton2 = document.querySelector("#selfdestruct")
+	const switchToggle2 = document.querySelector("#switch")
+	
+	launchButton2.addEventListener("click", function() {
+		console.log("ABORTED")
+		switchToggle.className = "switch selfdestruct"
+
+	})
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
