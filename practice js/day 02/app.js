@@ -353,11 +353,11 @@
 // // FINDING AN ITEM IN YOUR INDEX (LIST):
 // // shoppingList.indexOf("oranges for example")
 
-
-
 // // // OUTPUT
 
 // console.log(shoppingList)
+
+
 
 
 // // NEXT ASSIGNMENT 6 NESTED CODE LOOPS
@@ -395,11 +395,11 @@
 // #1
 // make a function called 'generateId'. It should take no arguments and return a string. Hint: Math.random might be helpful here. Click here for MDN's docs on Math.random
 
-
 // function generateid() {
 // 	return Math.ceil(Math.random()/2*10);
 // }
 // console.log(generateid())
+
 
 // #2
 // make a function called 'chooseRandomTeam'. It should take an array of strings and return a string.
@@ -409,10 +409,8 @@
 // 		index = Math.ceil(Math.random()teamlist.length)
 // 		const teamlist = ["mitch","balls","boner","poons","dicks"]
 // 		return teamlist[index]
-
 // 			}
 	
-
 // console.log(chooserandomteams)
 
 
@@ -420,24 +418,19 @@
 // make a 'createPlayer' function . It should take a string (name of player), and returns the following object with a random team assigned and a random id:
 
 
-function createplayer(name) {
-	return {
-		id: generateid(),
-		name: name,
-		score: 0,
-		team: chooserandomteams
-	}
-}
-const result = createplayer
+// function createplayer(name) {
+// 	return {
+// 		id: generateid(),
+// 		name: name,
+// 		score: 0,
+// 		team: chooserandomteams
+// 	}
+// }
+// const result = createplayer
 
 // #4
 // make a function called add10Points. It should take an array of players, and the name of the person you want to add 10 points to. It should return a new array with the updated score. (Hint, use findIndex to find the person you want to update) Example:
 
-
-const players = [
-
-
-]
 
 
 
@@ -448,36 +441,20 @@ const players = [
 
 
 
-function add10points(listofplayers, playername) {
-	// find player
+// function add10points(listofplayers, playername) {
+// 	// find player
 
-		const player = listofplayers.findindex(function(player) {
-			return player.name === playername
-		})
+// 		const player = listofplayers.findindex(function(player) {
+// 			return player.name === playername
+// 		})
 
-	// add 10 Points 
-		listofplayers[index].score = listofplayers[index].score
-	return listofplayers
+// 	// add 10 Points 
+// 		listofplayers[index].score = listofplayers[index].score
+// 	return listofplayers
 
-}
+// }
 
-add10points(players, "john")
-
-
-// #6
-
-
-
-
-
-
-
-
-
-
-
-
-
+// add10points(players, "john")
 
 
 

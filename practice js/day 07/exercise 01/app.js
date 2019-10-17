@@ -34,21 +34,21 @@
 //       console.log(x)
 //     })
 
-const url = 'https://now-server.orangeman.now.sh/api/tweet'
+// const url = 'https://now-server.orangeman.now.sh/api/tweet'
 
-const data = {
-	  method: 'POST',
-    body: JSON.stringify({
-		twitterHandle: 'string',
-		tweet: 'string'
-		})
-		}
+// const data = {
+// 	  method: 'POST',
+//     body: JSON.stringify({
+// 		twitterHandle: 'string',
+// 		tweet: 'string'
+// 		})
+// 		}
 
-	fetch(url, data)
-		.then(x =>  x.json())
-		.then(x => {
-			console.log(x)
-		})
+// 	fetch(url, data)
+// 		.then(x =>  x.json())
+// 		.then(x => {
+// 			console.log(x)
+// 		})
 
 
 // TODAYS LESSON

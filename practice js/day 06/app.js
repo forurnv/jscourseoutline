@@ -159,37 +159,37 @@
 // EXERCISE 5 REPLIES WHILE LOADING (CLIENT WAITING)
 
 
-function writeToPage(text) {
-  const el = document.createElement('div')
-  el.id = 'display'
-  el.style = `
-    padding: 20px 40px;
-    border-radius: 5px;
-    background: #222;
-    color: white;
-    font-family: sans-serif;
-    display: inline-block;
-  `
-  el.textContent = text
-  document.body.appendChild(el)
-}
-function updateDisplay (text) {
-  const el = document.querySelector('#display')  
-  el.textContent = text
-}
-const url = "https://pokeapi.co/api/v2/pokemon/1"
+// function writeToPage(text) {
+//   const el = document.createElement('div')
+//   el.id = 'display'
+//   el.style = `
+//     padding: 20px 40px;
+//     border-radius: 5px;
+//     background: #222;
+//     color: white;
+//     font-family: sans-serif;
+//     display: inline-block;
+//   `
+//   el.textContent = text
+//   document.body.appendChild(el)
+// }
+// function updateDisplay (text) {
+//   const el = document.querySelector('#display')  
+//   el.textContent = text
+// }
+// const url = "https://pokeapi.co/api/v2/pokemon/1"
 
-writeToPage('Loading...')
-fetch(url).then(x => {
-  return x.json()
-})
-.then(x => {
-	updateDisplay (x.name)
-	writeToPage(x.height)
+// writeToPage('Loading...')
+// fetch(url).then(x => {
+//   return x.json()
+// })
+// .then(x => {
+// 	updateDisplay (x.name)
+// 	writeToPage(x.height)
 
-	writeToPage(x.abilities)
-	writeToPage(x.age)
-})
+// 	writeToPage(x.abilities)
+// 	writeToPage(x.age)
+// })
 
 // MY ORIGINAL THOUGHTS ON THIS EXERCISE FROM MDN
 // var el = document.getElementById('div-02');
