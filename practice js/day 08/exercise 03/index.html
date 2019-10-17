@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Exercise 4 (calc)</title>
+
+        <style>
+            .page {
+                background: #e3e3e3;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .container {
+                width: 200px;
+                background: #567;
+            }
+
+            #screen {
+                height: 100px;
+                width: 100%;
+                background: #334;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+
+            .row {
+                display: flex;
+            }
+
+            button {
+                flex: 1;
+                border: 1px solid black;
+                background: #345;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+            }
+        </style>
+    </head>
+
+    <body class="page">
+        <div class="container">
+            <div id="screen"></div>
+            <div class="row">
+                <button id="b7">7</button>
+                <button id="b8">8</button>
+                <button id="b9">9</button>
+            </div>
+
+            <div class="row">
+                <button id="b4">4</button>
+                <button id="b5">5</button>
+                <button id="b6">6</button>
+            </div>
+
+            <div class="row">
+                <button id="b1">1</button>
+                <button id="b2">2</button>
+                <button id="b3">3</button>
+            </div>
+
+            <div class="row">
+                <button id="add">+</button>
+                <button id="b0">0</button>
+                <button id="minus">-</button>
+            </div>
+
+            <div class="row">
+                <button id="multi">*</button>
+                <button id="div">/</button>
+                <button id="square">(X<sup>2</sup>)</button>
+            </div>
+
+            <div class="row">
+                <button id="equals">=</button>
+                <button id="corr">corr</button>
+                <button id="clear">clear</button>
+            </div>
+
+        </div>
+    </body>
+
+    <script>
+        const on = (el, f) =>
+            document.getElementById(el).addEventListener('click', f)
+
+        const updateScreen = x =>
+            document.getElementById('screen').innerHTML = x
+
+        class Calculator {
+            constructor(render) {
+                this.result = 0
+                this.working = ''
+                this.render = render
+            }
+
+            addToWorking(value) {
+                this.working = this.working + value
+            }
+
+            corr(value) {
+                const subcharacter = str => str.slice(0, -1)
+                this.working = subcharacter(this.working)
+            }
+
+            calculate() {
+                const result = eval(this.working)
+                this.result = result
+            }
+
+            clear() {
+                this.working = ""
+                this.result = 0
+            }
+
+            renderResult() {
+                this.render(this.result || 0)
+            }
+
+            renderWorking() {
+                updateScreen(this.working || 0)
+            }
+        }
+
+        const blueCalculator = new Calculator(updateScreen)
+
+        on('b0', () => {
+            blueCalculator.addToWorking(0)
+            blueCalculator.renderWorking()
+        })
+
+        on('b1', () => {
+            blueCalculator.addToWorking(1)
+            blueCalculator.renderWorking()
+        })
+
+        on('b2', () => {
+            blueCalculator.addToWorking(2)
+            blueCalculator.renderWorking()
+        })
+
+        on('b3', () => {
+            blueCalculator.addToWorking(3)
+            blueCalculator.renderWorking()
+        })
+
+        on('b4', () => {
+            blueCalculator.addToWorking(4)
+            blueCalculator.renderWorking()
+        })
+
+        on('b5', () => {
+            blueCalculator.addToWorking(5)
+            blueCalculator.renderWorking()
+        })
+
+        on('b6', () => {
+            blueCalculator.addToWorking(6)
+            blueCalculator.renderWorking()
+        })
+
+        on('b7', () => {
+            blueCalculator.addToWorking(7)
+            blueCalculator.renderWorking()
+        })
+
+        on('b8', () => {
+            blueCalculator.addToWorking(8)
+            blueCalculator.renderWorking()
+        })
+
+        on('b9', () => {
+            blueCalculator.addToWorking(9)
+            blueCalculator.renderWorking()
+        })
+
+        on('add', () => {
+            blueCalculator.addToWorking('+')
+            blueCalculator.renderWorking()
+        })
+
+        on('minus', () => {
+            blueCalculator.addToWorking('-')
+            blueCalculator.renderWorking()
+        })
+
+        on('div', () => {
+            blueCalculator.addToWorking('/')
+            blueCalculator.renderWorking()
+        })
+
+        on('multi', () => {
+            blueCalculator.addToWorking('*')
+            blueCalculator.renderWorking()
+        })
+
+         on('equals', () => {
+            blueCalculator.calculate()
+            blueCalculator.renderResult()
+        })
+
+        on('square', () => {
+            blueCalculator.calculate()
+            blueCalculator.renderResult(renderResult * renderResult)
+        })
+
+        on('corr', () => {
+            blueCalculator.corr()
+            blueCalculator.renderWorking()
+        })
+
+        on('clear', () => {
+            blueCalculator.clear()
+            blueCalculator.renderResult()
+        })
+
+
+    </script>
+</html>
+
+<!-- IF YOU WANTED TO GO/LEARN FURTHER YOU COULD, 
+-ATTEMPT TO FIND A WAY TO RESOLVE HOW THE CLEAR BUTTON ON A SOLUTION REFERS TO THE LAST STRING PRIOR TO CLICKING = 
+-MAKING THE X2 BUTTON WORK -->
